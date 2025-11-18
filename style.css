@@ -287,51 +287,50 @@ footer {
   }
 }
 
-.abstract-bg {
+.wave-bg {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -10;
-    background: linear-gradient(120deg, #ff4d6d, #ff6b81, #ffccd5, #ffffff);
-    background-size: 300% 300%;
-    animation: gradientFlow 12s ease infinite;
     overflow: hidden;
+    z-index: -10;
 }
 
-/* animated flowing lines */
-.abstract-bg::before,
-.abstract-bg::after {
-    content: "";
-    position: absolute;
-    top: -200px;
-    left: -200px;
-    width: 200%;
-    height: 200%;
-    background: repeating-linear-gradient(
-        60deg,
-        rgba(255, 255, 255, 0.2) 0px,
-        rgba(255, 255, 255, 0.2) 3px,
-        transparent 6px,
-        transparent 12px
-    );
-    animation: lineFlow 15s linear infinite;
-    opacity: 0.4;
+.wave-bg svg {
+    width: 100%;
+    height: 100%;
+    display: block;
 }
 
-.abstract-bg::after {
-    animation-duration: 25s;
-    opacity: 0.25;
+/* Colors like your image */
+.wave1 {
+    fill: #ff003c;  /* strong red */
+    animation: moveWave1 10s ease-in-out infinite alternate;
 }
 
-@keyframes gradientFlow {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+.wave2 {
+    fill: #ff5a7a;  /* pink */
+    animation: moveWave2 14s ease-in-out infinite alternate;
 }
 
-@keyframes lineFlow {
-    from { transform: translateX(0) translateY(0); }
-    to { transform: translateX(200px) translateY(200px); }
+.wave3 {
+    fill: #ffffff;  /* white */
+    animation: moveWave3 18s ease-in-out infinite alternate;
+}
+
+/* Wave animations */
+@keyframes moveWave1 {
+    from { transform: translateX(0px) translateY(0px); }
+    to   { transform: translateX(-40px) translateY(20px); }
+}
+
+@keyframes moveWave2 {
+    from { transform: translateX(0px) translateY(0px); }
+    to   { transform: translateX(40px) translateY(-20px); }
+}
+
+@keyframes moveWave3 {
+    from { transform: translateX(0px) translateY(0px); }
+    to   { transform: translateX(-30px) translateY(30px); }
 }
