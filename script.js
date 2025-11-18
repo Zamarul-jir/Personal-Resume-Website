@@ -135,3 +135,60 @@ document.querySelectorAll('.card').forEach((card, index) => {
         card.style.animation = 'bounceIn 0.8s ease-out';
     }, index * 200);
 });
+
+// Instagram-like gallery hover effects (already handled in CSS, but add click feedback)
+document.querySelectorAll('.post').forEach(post => {
+    post.addEventListener('click', () => {
+        alert('❤️ Liked! (In a real Instagram, this would save to your feed.)');
+    });
+});
+
+// Mini Game: Clash Royale Battle
+let score = 0;
+let gameActive = false;
+let enemyInterval;
+const enemy = document.getElementById('enemy');
+const scoreDisplay = document.getElementById('score');
+const startBtn = document.getElementById('start-game');
+const restartBtn = document.getElementById('restart-game');
+
+const startGame = () => {
+    score = 0;
+    scoreDisplay.textContent = 'Score: 0';
+    gameActive = true;
+    startBtn.style.display = 'none';
+    restartBtn.style.display = 'none';
+    enemy.style.display = 'block';
+    moveEnemy();
+    enemyInterval = setInterval(moveEnemy, 2000); // Move every 2 seconds
+    setTimeout(endGame, 30000); // Game lasts 30 seconds
+};
+
+const moveEnemy = () => {
+    if (!gameActive) return;
+    const x = Math.random() * (window.innerWidth - 100);
+    const y = Math.random() * 200 + 50; // Keep within game area
+    enemy.style.left = x + 'px';
+    enemy.style.top = y + 'px';
+};
+
+const hitEnemy = () => {
+    if (!gameActive) return;
+    score += 10;
+    scoreDisplay.textContent = 'Score: ' + score;
+    enemy.style.animation = 'hit 0.3s ease';
+    setTimeout(() => enemy.style.animation = '', 300);
+    moveEnemy(); // Move immediately after hit
+};
+
+const endGame = () => {
+    gameActive = false;
+    clearInterval(enemyInterval);
+    enemy.style.display = 'none';
+    restartBtn.style.display = 'inline-block';
+    alert(Battle over! Final Score: ${score}. Great job, warrior!);
+};
+
+enemy.addEventListener('click', hitEnemy);
+startBtn.addEventListener('click', startGame);
+restartBtn.addEventListener('click', startGame);
