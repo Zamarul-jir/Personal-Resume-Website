@@ -287,23 +287,51 @@ footer {
   }
 }
 
-.bg-video {
+.abstract-bg {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    z-index: -2;
+    z-index: -10;
+    background: linear-gradient(120deg, #ff4d6d, #ff6b81, #ffccd5, #ffffff);
+    background-size: 300% 300%;
+    animation: gradientFlow 12s ease infinite;
+    overflow: hidden;
 }
 
-/* Overlay for 70% opacity */
-.video-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.3); /* 30% black = makes video look 70% visible */
-    z-index: -1;
+/* animated flowing lines */
+.abstract-bg::before,
+.abstract-bg::after {
+    content: "";
+    position: absolute;
+    top: -200px;
+    left: -200px;
+    width: 200%;
+    height: 200%;
+    background: repeating-linear-gradient(
+        60deg,
+        rgba(255, 255, 255, 0.2) 0px,
+        rgba(255, 255, 255, 0.2) 3px,
+        transparent 6px,
+        transparent 12px
+    );
+    animation: lineFlow 15s linear infinite;
+    opacity: 0.4;
+}
+
+.abstract-bg::after {
+    animation-duration: 25s;
+    opacity: 0.25;
+}
+
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes lineFlow {
+    from { transform: translateX(0) translateY(0); }
+    to { transform: translateX(200px) translateY(200px); }
 }
