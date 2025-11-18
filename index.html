@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asyifa Mirza - Fun Resume</title>
+    <title>Asyifa Mirza - Super Fun Resume</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
+    <!-- Particle background for fun ambiance -->
+    <div id="particles"></div>
+
     <nav id="navbar">
         <div class="nav-container">
             <h1>Asyifa Mirza</h1>
@@ -26,9 +29,9 @@
     <section id="home">
         <div class="container">
             <div class="profile">
-                <img src="profile-placeholder.png" alt="Profile Photo" class="profile-img">
-                <h2>Hey there! 👋</h2>
-                <p>I'm Asyifa Mirza, a creative soul who codes, designs, and dominates in Clash Royale. Let's scroll and have some fun!</p>
+                <img src="profile-placeholder.png" alt="Profile Photo" class="profile-img" id="profile-click">
+                <h2>Hey, I'm Asyifa Mirza</h2>
+                <p id="intro-text">Coder by day, Clash Royale champion by night. Let's make this scroll epic!</p>
             </div>
         </div>
     </section>
@@ -36,8 +39,8 @@
     <section id="about">
         <div class="container">
             <h2>About Me</h2>
-            <div class="card">
-                <p>I'm a passionate developer and designer who loves turning ideas into interactive experiences. When I'm not coding, you'll find me strategizing epic wins in Clash Royale or editing photos in Photoshop. Fun fact: I once built a website that made my cat dance! 🐱💃</p>
+            <div class="card bounce-in">
+                <p>I'm a developer who turns code into magic—think websites that dance and apps that surprise. Outside of pixels, I'm plotting world domination in Clash Royale (spoiler: I'm winning). Fun fact: My Photoshop skills once turned a blurry selfie into a masterpiece. Ready for more? Scroll on!</p>
             </div>
         </div>
     </section>
@@ -45,89 +48,41 @@
     <section id="skills">
         <div class="container">
             <h2>My Skills</h2>
-            <div class="skills-grid">
-                <div class="skill">
-                    <div class="radial-progress" data-percentage="90">
-                        <div class="circle">
-                            <div class="mask full">
-                                <div class="fill"></div>
-                            </div>
-                            <div class="mask half">
-                                <div class="fill"></div>
-                                <div class="fill fix"></div>
-                            </div>
-                        </div>
-                        <div class="inset">HTML</div>
+            <div class="skills-container">
+                <div class="skill-bar" data-percentage="90" data-tip="HTML: The backbone of the web—strong, reliable, and always there.">
+                    <div class="skill-label">HTML</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
                     </div>
                 </div>
-                <div class="skill">
-                    <div class="radial-progress" data-percentage="85">
-                        <div class="circle">
-                            <div class="mask full">
-                                <div class="fill"></div>
-                            </div>
-                            <div class="mask half">
-                                <div class="fill"></div>
-                                <div class="fill fix"></div>
-                            </div>
-                        </div>
-                        <div class="inset">CSS</div>
+                <div class="skill-bar" data-percentage="85" data-tip="CSS: Making things look good since forever. Hover for a glow-up!">
+                    <div class="skill-label">CSS</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
                     </div>
                 </div>
-                <div class="skill">
-                    <div class="radial-progress" data-percentage="80">
-                        <div class="circle">
-                            <div class="mask full">
-                                <div class="fill"></div>
-                            </div>
-                            <div class="mask half">
-                                <div class="fill"></div>
-                                <div class="fill fix"></div>
-                            </div>
-                        </div>
-                        <div class="inset">JavaScript</div>
+                <div class="skill-bar" data-percentage="80" data-tip="JavaScript: The wizard behind the curtain. Makes everything interactive and fun.">
+                    <div class="skill-label">JavaScript</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
                     </div>
                 </div>
-                <div class="skill">
-                    <div class="radial-progress" data-percentage="75">
-                      <div class="circle">
-                            <div class="mask full">
-                                <div class="fill"></div>
-                            </div>
-                            <div class="mask half">
-                                <div class="fill"></div>
-                                <div class="fill fix"></div>
-                            </div>
-                        </div>
-                        <div class="inset">React</div>
+                <div class="skill-bar" data-percentage="75" data-tip="React: Building UIs that react (pun intended) to your every move.">
+                    <div class="skill-label">React</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
                     </div>
                 </div>
-                <div class="skill">
-                    <div class="radial-progress" data-percentage="95">
-                        <div class="circle">
-                            <div class="mask full">
-                                <div class="fill"></div>
-                            </div>
-                            <div class="mask half">
-                                <div class="fill"></div>
-                                <div class="fill fix"></div>
-                            </div>
-                        </div>
-                        <div class="inset">Clash Royale</div>
+                <div class="skill-bar" data-percentage="95" data-tip="Clash Royale: Strategy game? More like life simulator. Pro level: Always deploy the Hog.">
+                    <div class="skill-label">Clash Royale</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
                     </div>
                 </div>
-                <div class="skill">
-                    <div class="radial-progress" data-percentage="70">
-                        <div class="circle">
-                            <div class="mask full">
-                                <div class="fill"></div>
-                            </div>
-                            <div class="mask half">
-                                <div class="fill"></div>
-                                <div class="fill fix"></div>
-                            </div>
-                        </div>
-                        <div class="inset">Photoshop</div>
+                <div class="skill-bar" data-percentage="70" data-tip="Photoshop: Turning 'meh' into 'wow' one layer at a time.">
+                    <div class="skill-label">Photoshop</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
                     </div>
                 </div>
             </div>
@@ -138,17 +93,17 @@
         <div class="container">
             <h2>Experience</h2>
             <div class="card-list">
-                <div class="card">
+                <div class="card slide-in-left">
                     <h3>Frontend Developer</h3>
-                    <p>Built interactive websites with HTML, CSS, and JS. Added fun animations that made users smile!</p>
+                    <p>Crafted websites with flair—added animations that made users grin. Bonus: Debugged code while sipping coffee (or energy drinks).</p>
                 </div>
-                <div class="card">
+                <div class="card slide-in-right">
                     <h3>Clash Royale Strategist</h3>
-                    <p>Led my clan to victory with epic deck builds and tactical plays. Pro tip: Always counter with Hog Rider!</p>
+                    <p>Led clans to glory with decks that outsmarted opponents. Secret weapon: A love for chaos and quick reflexes.</p>
                 </div>
-                <div class="card">
+                <div class="card slide-in-left">
                     <h3>Graphic Designer</h3>
-                    <p>Designed logos and edited photos in Photoshop. Turned boring images into masterpieces!</p>
+                    <p>Edited photos into art. Photoshop is my paintbrush; creativity is my canvas. Once fixed a logo in under 5 minutes—hero mode activated.</p>
                 </div>
             </div>
         </div>
@@ -158,13 +113,13 @@
         <div class="container">
             <h2>Education</h2>
             <div class="card-list">
-                <div class="card">
+                <div class="card fade-in">
                     <h3>Bachelor's in Computer Science</h3>
-                    <p>University of Fun Coding, 2020-2024. Learned to code while playing games—best combo ever!</p>
+                    <p>University of Fun Coding, 2020-2024. Learned algorithms while gaming—turns out, both require strategy. Graduated with honors (and a high score in Tetris).</p>
                 </div>
-                <div class="card">
+                <div class="card fade-in">
                     <h3>High School Diploma</h3>
-                    <p>School of Creativity, 2016-2020. Where I discovered Photoshop and my love for design.</p>
+                    <p>School of Creativity, 2016-2020. Discovered design and code. Also: Survived group projects and perfected the art of procrastination.</p>
                 </div>
             </div>
         </div>
@@ -174,15 +129,15 @@
         <div class="container">
             <h2>Gallery</h2>
             <div class="gallery-grid">
-                <img src="placeholder.png" alt="Gallery Image 1" class="gallery-img">
-                <img src="placeholder.png" alt="Gallery Image 2" class="gallery-img">
-                <img src="placeholder.png" alt="Gallery Image 3" class="gallery-img">
-                <img src="placeholder.png" alt="Gallery Image 4" class="gallery-img">
-                <img src="placeholder.png" alt="Gallery Image 5" class="gallery-img">
-                <img src="placeholder.png" alt="Gallery Image 6" class="gallery-img">
-                <img src="placeholder.png" alt="Gallery Image 7" class="gallery-img">
-                <img src="placeholder.png" alt="Gallery Image 8" class="gallery-img">
-                <img src="placeholder.png" alt="Gallery Image 9" class="gallery-img">
+                <img src="placeholder.png" alt="Gallery Image 1" class="gallery-img wiggle">
+                <img src="placeholder.png" alt="Gallery Image 2" class="gallery-img wiggle">
+                <img src="placeholder.png" alt="Gallery Image 3" class="gallery-img wiggle">
+                <img src="placeholder.png" alt="Gallery Image 4" class="gallery-img wiggle">
+                <img src="placeholder.png" alt="Gallery Image 5" class="gallery-img wiggle">
+                <img src="placeholder.png" alt="Gallery Image 6" class="gallery-img wiggle">
+                <img src="placeholder.png" alt="Gallery Image 7" class="gallery-img wiggle">
+                <img src="placeholder.png" alt="Gallery Image 8" class="gallery-img wiggle">
+                <img src="placeholder.png" alt="Gallery Image 9" class="gallery-img wiggle">
             </div>
         </div>
     </section>
@@ -191,15 +146,15 @@
         <div class="container">
             <h2>Contact Me</h2>
             <div class="contact-links">
-                <a href="mailto:zamarulasyrafbinzaidi@gmail.com" class="btn">Email Me 📧</a>
-                <a href="https://instagram.com/mdzmaa" target="_blank" class="btn">Instagram @mdzmaaa</a>
-                <a href="https://supercell.com" target="_blank" class="btn">Supercell @WonderfulScarceAsy</a>
+                <a href="mailto:zamarulasyrafbinzaidi@gmail.com" class="btn pulse">Email Me</a>
+                <a href="https://instagram.com/mdzmaa" target="_blank" class="btn pulse">Instagram @mdzmaaa</a>
+                <a href="https://supercell.com" target="_blank" class="btn pulse">Supercell @WonderfulScarceAsy</a>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>Made with ❤️ and lots of fun by Asyifa Mirza</p>
+        <p id="footer-text">Built with code, caffeine, and a dash of chaos by Asyifa Mirza. Hover for a surprise!</p>
     </footer>
 </body>
 </html>
