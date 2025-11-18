@@ -1,203 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zamarul Asyraf Bin Zaidi - Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zamarul Asyraf Bin Zaidi | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-    <!-- Floating Background Elements -->
-    <div class="floating-shapes">
-        <div class="shape"></div>
-        <div class="shape"></div>
-        <div class="shape"></div>
-    </div>
+  <main class="container">
+    <!-- Left side with profile image and background -->
+    <section class="left-side">
+      <img src="https://via.placeholder.com/360x460?text=Profile+Picture" alt="Zamarul Asyraf Bin Zaidi Profile Picture" class="profile-img" />
+    </section>
 
-    <!-- Header with Navigation -->
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#" data-page="home">Home</a></li>
-                <li><a href="#" data-page="about">About</a></li>
-                <li><a href="#" data-page="skills">Skills</a></li>
-                <li><a href="#" data-page="experience">Experience</a></li>
-                <li><a href="#" data-page="education">Education</a></li>
-                <li><a href="#" data-page="gallery">Gallery</a></li>
-                <li><a href="#" data-page="contact">Contact</a></li>
-            </ul>
+    <!-- Right side with content -->
+    <section class="right-side">
+      <header class="top-bar">
+        <span class="branding">ZAMARUL ASYRAF BIN ZAIDI | DIPLOMA IN INFORMATION MANAGEMENT</span>
+        <nav class="top-menu">HOME</nav>
+      </header>
+
+      <div class="intro-text" id="intro-text">
+        <h1>Hi, My Name is <span class="highlight">Zamarul Asyraf Bin Zaidi.</span></h1>
+        <p>
+          Diploma in Information Management student.<br />
+          Passionate programmer and creative mind.<br />
+          I love coding, editing, and exploring new technologies.<br />
+          I strive to combine fun and professionalism in everything I do.
+        </p>
+      </div>
+
+      <!-- Buttons for navigation -->
+      <nav class="btn-group" aria-label="Portfolio Navigation">
+        <button type="button" class="btn" data-section="about">ABOUT ME</button>
+        <button type="button" class="btn" data-section="skills">SKILLS</button>
+        <button type="button" class="btn" data-section="experience">EXPERIENCE</button>
+        <button type="button" class="btn" data-section="education">EDUCATION</button>
+        <button type="button" class="btn" data-section="gallery">GALLERY</button>
+        <button type="button" class="btn" data-section="contact">CONTACT ME</button>
+      </nav>
+
+      <!-- Content sections hidden initially except intro -->
+      <section id="about" class="content-section">
+        <h2>About Me</h2>
+        <p>
+          “Hi! I’m Zamarul Asyraf Bin Zaidi, a passionate programmer and creative mind. I love coding, editing,
+          and exploring new technologies. I strive to combine fun and professionalism in everything I do.”
+        </p>
+      </section>
+
+      <section id="skills" class="content-section">
+        <h2>Skills</h2>
+        <ul>
+          <li><strong>Talking:</strong> Great at communication and networking.</li>
+          <li><strong>Editing:</strong> Proficient in video and photo editing tools.</li>
+          <li><strong>Coding:</strong> Skilled in programming languages and development.</li>
+          <li><strong>Playing Games:</strong> Expert gamer with strategic thinking.</li>
+        </ul>
+      </section>
+
+      <section id="experience" class="content-section">
+        <h2>Experience</h2>
+        <ul>
+          <li>Passed Programming class in Semester 3 with A.</li>
+          <li>Top leaderboard in my game.</li>
+          <li>Makes money from editing skills.</li>
+        </ul>
+      </section>
+
+      <section id="education" class="content-section">
+        <h2>Education</h2>
+        <ul>
+          <li>Darjah 1-6: Sekolah Kebangsaan Bukit Teh (UPSR 4A 2B)</li>
+          <li>Tingkatan 1-5: High School Bukit Mertajam (SPM 6A)</li>
+          <li>Diploma: Information Management, UiTM Merbok</li>
+        </ul>
+      </section>
+
+      <section id="gallery" class="content-section">
+        <h2>Gallery</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="https://via.placeholder.com/300x200?text=Image+1" alt="Gallery Image 1" />
+          </div>
+          <div class="gallery-item">
+            <img src="https://via.placeholder.com/300x200?text=Image+2" alt="Gallery Image 2" />
+          </div>
+          <div class="gallery-item">
+            <img src="https://via.placeholder.com/300x200?text=Image+3" alt="Gallery Image 3" />
+          </div>
+          <div class="gallery-item">
+            <img src="https://via.placeholder.com/300x200?text=Image+4" alt="Gallery Image 4" />
+          </div>
+          <div class="gallery-item">
+            <img src="https://via.placeholder.com/300x200?text=Image+5" alt="Gallery Image 5" />
+          </div>
+          <div class="gallery-item">
+            <img src="https://via.placeholder.com/300x200?text=Image+6" alt="Gallery Image 6" />
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="content-section">
+        <h2>Contact Me</h2>
+        <nav class="social-icons" aria-label="Social Media Links">
+          <a href="mailto:zamarulasyrafbinzaidi@gmail.com" aria-label="Email" target="_blank" rel="noopener noreferrer">✉️</a>
+          <a href="https://instagram.com/mdzmaa" aria-label="Instagram" target="_blank" rel="noopener noreferrer">📸</a>
+          <a href="https://supercell.com/en/games/clashroyale/" aria-label="Clash Royale" target="_blank" rel="noopener noreferrer">🎮</a>
         </nav>
-    </header>
+        <p>Clash Royale ID: @WonderfulScarceAsy</p>
+      </section>
 
-    <!-- Main Content Sections -->
-    <main>
-        <!-- Home Page -->
-        <section id="home" class="page active">
-            <div class="hero">
-                <h1>Zamarul Asyraf Bin Zaidi</h1>
-                <p>Diploma in Information Management</p>
-                <div class="floating-icons">
-                    <span class="icon">💻</span>
-                    <span class="icon">🎮</span>
-                    <span class="icon">✏️</span>
-                </div>
-            </div>
-        </section>
+      <footer>
+        © 2025 Zamarul Asyraf Bin Zaidi. Powered and secured by Your Portfolio.
+      </footer>
+    </section>
+  </main>
 
-        <!-- About Page -->
-        <section id="about" class="page">
-            <div class="container">
-                <h2>About Me</h2>
-                <div class="about-content">
-                    <div class="profile-placeholder">
-                        <img src="https://via.placeholder.com/200x200?text=Profile+Pic" alt="Profile Picture" class="profile-img">
-                    </div>
-                    <p>“Hi! I’m Zamarul Asyraf Bin Zaidi, a passionate programmer and creative mind. I love coding, editing, and exploring new technologies. I strive to combine fun and professionalism in everything I do.”</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills Page -->
-        <section id="skills" class="page">
-            <div class="container">
-                <h2>My Skills</h2>
-                <div class="skills-graph">
-                    <div class="skill" data-skill="Talking" data-desc="Great at communication and networking.">
-                        <div class="circular-progress" data-percentage="90">
-                            <div class="progress-circle">
-                                <span class="skill-name">Talking</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill" data-skill="Editing" data-desc="Proficient in video and photo editing tools.">
-                        <div class="circular-progress" data-percentage="85">
-                            <div class="progress-circle">
-                                <span class="skill-name">Editing</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill" data-skill="Coding" data-desc="Skilled in programming languages and development.">
-                        <div class="circular-progress" data-percentage="80">
-                            <div class="progress-circle">
-                                <span class="skill-name">Coding</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill" data-skill="Playing Games" data-desc="Expert gamer with strategic thinking.">
-                        <div class="circular-progress" data-percentage="95">
-                            <div class="progress-circle">
-                                <span class="skill-name">Playing Games</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Experience Page -->
-        <section id="experience" class="page">
-            <div class="container">
-                <h2>Experience</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="icon">🎓</div>
-                        <h3>Programming Class</h3>
-                        <p>Passed Programming class in Semester 3 with A.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="icon">🏆</div>
-                        <h3>Game Achievement</h3>
-                        <p>Top leaderboard in my game.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="icon">💰</div>
-                        <h3>Editing Skills</h3>
-                        <p>Makes money from editing skills.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Education Page -->
-        <section id="education" class="page">
-            <div class="container">
-                <h2>Education</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="icon">📚</div>
-                        <h3>Darjah 1-6</h3>
-                        <p>Sekolah Kebangsaan Bukit Teh (UPSR 4A 2B)</p>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="icon">🏫</div>
-                        <h3>Tingkatan 1-5</h3>
-                        <p>High School Bukit Mertajam (SPM 6A)</p>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="icon">🎓</div>
-                        <h3>Diploma</h3>
-                        <p>Information Management, UiTM Merbok</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Gallery Page -->
-        <section id="gallery" class="page">
-            <div class="container">
-                <h2>Gallery</h2>
-                <div class="gallery-grid">
-                    <div class="gallery-item">
-                        <img src="https://via.placeholder.com/300x200?text=Image+1" alt="Gallery Image 1">
-                        <div class="overlay">Creative Work</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://via.placeholder.com/300x200?text=Image+2" alt="Gallery Image 2">
-                        <div class="overlay">Tech Project</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://via.placeholder.com/300x200?text=Image+3" alt="Gallery Image 3">
-                        <div class="overlay">Fun Moment</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://via.placeholder.com/300x200?text=Image+4" alt="Gallery Image 4">
-                        <div class="overlay">Editing Sample</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://via.placeholder.com/300x200?text=Image+5" alt="Gallery Image 5">
-                        <div class="overlay">Game Screenshot</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://via.placeholder.com/300x200?text=Image+6" alt="Gallery Image 6">
-                        <div class="overlay">Personal Photo</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Page -->
-        <section id="contact" class="page">
-            <div class="container">
-                <h2>Contact Me</h2>
-                <div class="contact-icons">
-                    <a href="mailto:zamarulasyrafbinzaidi@gmail.com" class="contact-icon" title="Email">
-                        <img src="https://via.placeholder.com/50x50?text=Email" alt="Email Icon">
-                    </a>
-                    <a href="https://instagram.com/mdzmaa" target="_blank" class="contact-icon" title="Instagram">
-                        <img src="https://via.placeholder.com/50x50?text=IG" alt="Instagram Icon">
-                    </a>
-                    <a href="https://supercell.com/en/games/clashroyale/" target="_blank" class="contact-icon" title="Supercell (Clash Royale)">
-                        <img src="https://via.placeholder.com/50x50?text=CR" alt="Clash Royale Icon">
-                    </a>
-                </div>
-                <p>Clash Royale ID: @WonderfulScarceAsy</p>
-            </div>
-        </section>
-    </main>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>
