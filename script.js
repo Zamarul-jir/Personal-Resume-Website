@@ -36,8 +36,11 @@ const animateSkills = () => {
         const isVisible = bar.getBoundingClientRect().top < window.innerHeight - 100;
         if (isVisible && !bar.classList.contains('animated')) {
             bar.classList.add('animated');
-            fill.style.width = percentage + '%';
-            fill.style.setProperty('--current-width', percentage + '%');
+            fill.style.width = '0%'; // Start from 0
+            setTimeout(() => {
+                fill.style.transition = 'width 2s ease-in-out';
+                fill.style.width = percentage + '%';
+            }, 100);
         }
     });
 };
@@ -47,14 +50,11 @@ document.querySelectorAll('.skill-bar').forEach(bar => {
     const tip = bar.dataset.tip;
     const fill = bar.querySelector('.progress-fill');
     bar.addEventListener('mouseenter', () => {
-        // Show tip as a fun alert or tooltip (using a simple alert for now; can upgrade to a custom tooltip)
-        alert(tip); // Replace with a custom tooltip if preferred
-        // Boost the fill temporarily
+        alert(tip); // Fun alert for tips
         const currentWidth = parseFloat(fill.style.width) || 0;
         fill.style.width = Math.min(currentWidth + 10, 100) + '%';
     });
     bar.addEventListener('mouseleave', () => {
-        // Reset to original after a delay
         setTimeout(() => {
             fill.style.width = bar.dataset.percentage + '%';
         }, 1000);
@@ -78,6 +78,29 @@ homeSection.addEventListener('mouseleave', () => {
     introText.textContent = originalText;
 });
 
+// Fun quote carousel on home
+const funQuote = document.getElementById('fun-quote');
+const quotes = [
+    "Fun Fact: I once coded a website that made my cat dance! 🐱💃",
+    "Did you know? My Photoshop edits are award-worthy!",
+    "Pro Tip: Always deploy the Hog in Clash Royale!"
+];
+let quoteIndex = 0;
+setInterval(() => {
+    funQuote.textContent = quotes[quoteIndex];
+    quoteIndex = (quoteIndex + 1) % quotes.length;
+}, 5000);
+
+// Badge hover effects on home
+document.querySelectorAll('.badge').forEach(badge => {
+    badge.addEventListener('mouseenter', () => {
+        badge.style.transform = 'scale(1.1) rotate(5deg)';
+    });
+    badge.addEventListener('mouseleave', () => {
+        badge.style.transform = 'scale(1) rotate(0deg)';
+    });
+});
+
 // Secret click on profile photo for a mini animation burst
 const profileImg = document.getElementById('profile-click');
 profileImg.addEventListener('click', () => {
@@ -86,20 +109,6 @@ profileImg.addEventListener('click', () => {
         profileImg.style.animation = '';
         alert("🎉 Boom! You're awesome. Keep scrolling!");
     }, 500);
-});
-
-// Fun hover effects for gallery images (wiggle and glow)
-document.querySelectorAll('.gallery-img').forEach(img => {
-    img.addEventListener('mouseenter', () => {
-        img.style.transform = 'scale(1.1) rotate(5deg)';
-        img.style.boxShadow = '0 10px 40px rgba(59, 130, 246, 0.6)';
-        img.style.filter = 'brightness(1.2) saturate(1.3)';
-    });
-    img.addEventListener('mouseleave', () => {
-        img.style.transform = 'scale(1) rotate(0deg)';
-        img.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
-        img.style.filter = 'brightness(1) saturate(1)';
-    });
 });
 
 // Footer hover surprise
@@ -143,7 +152,7 @@ document.querySelectorAll('.post').forEach(post => {
     });
 });
 
-// Mini Game: Clash Royale Battle
+// Mini Game: Clash Royale Battle (Fixed for proper movement within game area)
 let score = 0;
 let gameActive = false;
 let enemyInterval;
@@ -151,6 +160,7 @@ const enemy = document.getElementById('enemy');
 const scoreDisplay = document.getElementById('score');
 const startBtn = document.getElementById('start-game');
 const restartBtn = document.getElementById('restart-game');
+const gameArea = document.getElementById('game-area');
 
 const startGame = () => {
     score = 0;
@@ -166,8 +176,9 @@ const startGame = () => {
 
 const moveEnemy = () => {
     if (!gameActive) return;
-    const x = Math.random() * (window.innerWidth - 100);
-    const y = Math.random() * 200 + 50; // Keep within game area
+    const gameRect = gameArea.getBoundingClientRect();
+    const x = Math.random() * (gameRect.width - 50) + gameRect.left;
+    const y = Math.random() * (gameRect.height - 50) + gameRect.top;
     enemy.style.left = x + 'px';
     enemy.style.top = y + 'px';
 };
@@ -186,7 +197,7 @@ const endGame = () => {
     clearInterval(enemyInterval);
     enemy.style.display = 'none';
     restartBtn.style.display = 'inline-block';
-    alert(Battle over! Final Score: ${score}. Great job, warrior!);
+    alert(`Battle over! Final Score: ${score}. Great job, warrior!`);
 };
 
 enemy.addEventListener('click', hitEnemy);
