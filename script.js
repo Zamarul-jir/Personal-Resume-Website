@@ -1,22 +1,24 @@
 // Smooth scroll for nav links
-const links = document.querySelectorAll('nav ul li a');
-
-for (const link of links) {
-    link.addEventListener('click', smoothScroll);
-}
-
-function smoothScroll(e) {
+document.querySelectorAll('nav ul li a').forEach(link => {
+  link.addEventListener('click', e => {
     e.preventDefault();
-    const targetId = this.getAttribute("href").slice(1);
-    const targetSection = document.getElementById(targetId);
-    targetSection.scrollIntoView({ behavior: "smooth" });
+    const targetId = link.getAttribute('href').slice(1);
+    document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+  });
+});
+
+// Animate skill bars on scroll
+const skills = document.querySelectorAll('.skill-progress');
+
+function animateSkills() {
+  skills.forEach(skill => {
+    const progress = skill.getAttribute('data-progress');
+    const rect = skill.getBoundingClientRect();
+    if(rect.top < window.innerHeight - 50) {
+      skill.style.width = progress;
+    }
+  });
 }
 
-// Fun hover interaction on Home title
-const homeTitle = document.querySelector('#home h1');
-homeTitle.addEventListener('mouseenter', () => {
-    homeTitle.textContent = "✨ You found me! ✨";
-});
-homeTitle.addEventListener('mouseleave', () => {
-    homeTitle.textContent = "Hey! I’m Asyifa 🌟";
-});
+window.addEventListener('scroll', animateSkills);
+window.addEventListener('load', animateSkills);
