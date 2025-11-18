@@ -1,0 +1,105 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0c1021;
+    color: white;
+}
+
+.bg-animated {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, #091427, #0f1c38, #09203f);
+    background-size: 300% 300%;
+    animation: bgMove 12s ease infinite;
+    z-index: -1;
+    opacity: 0.85;
+}
+
+@keyframes bgMove {
+    0% { background-position: 0 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0 50%; }
+}
+
+.header {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.name {
+    font-size: 32px;
+    font-weight: bold;
+    color: #c7d7ff;
+}
+
+.role {
+    margin-top: -10px;
+    color: #7da7ff;
+}
+
+.section {
+    width: 85%;
+    margin: 40px auto;
+    background: rgba(255, 255, 255, 0.04);
+    padding: 25px;
+    border-radius: 12px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.section h2 {
+    color: #8bb4ff;
+    margin-bottom: 10px;
+}
+
+.skill-bar {
+    margin-bottom: 20px;
+}
+
+.bar {
+    width: 100%;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.bar span {
+    display: block;
+    height: 100%;
+    width: 0;
+    background: #7da7ff;
+    border-radius: 10px;
+    transition: width 1.5s ease;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.img-box {
+    background: #1a2540;
+    border-radius: 10px;
+    height: 120px;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.img-box:hover {
+    transform: scale(1.03);
+    opacity: 0.85;
+}
+
+.note {
+    margin-top: 5px;
+    opacity: 0.7;
+    font-size: 13px;
+}
+
+.social-box p {
+    margin: 5px 0;
+}
