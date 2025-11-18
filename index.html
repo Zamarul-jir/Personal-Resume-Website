@@ -3,174 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asyifa Mirza - Fun Resume</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <title>Zamarul Asyraf Bin Zaidi - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
 </head>
 <body>
-    <nav>
-        <div class="nav-container">
-            <h1>Asyifa Mirza</h1>
+    <!-- Header with Navigation -->
+    <header>
+        <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#game">Mini Game</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" data-page="home">Home</a></li>
+                <li><a href="#" data-page="about">About</a></li>
+                <li><a href="#" data-page="skills">Skills</a></li>
+                <li><a href="#" data-page="experience">Experience</a></li>
+                <li><a href="#" data-page="education">Education</a></li>
+                <li><a href="#" data-page="gallery">Gallery</a></li>
+                <li><a href="#" data-page="contact">Contact</a></li>
             </ul>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
-    <section id="home">
-        <div class="container">
+    <!-- Main Content Sections -->
+    <main>
+        <!-- Home Page -->
+        <section id="home" class="page active">
             <div class="hero">
-                <img src="profile-placeholder.png" alt="Profile" class="profile-img">
-                <h2>Welcome to My World!</h2>
-                <p>I'm Asyifa, a creative coder and gamer who loves building fun things. Explore below!</p>
-                <div class="floating-emojis">🎉 🚀 💻</div>
+                <h1>Zamarul Asyraf Bin Zaidi</h1>
+                <p>Diploma in Information Management</p>
+                <div class="code-animation">
+                    <span class="code-line">console.log("Welcome to my portfolio!");</span>
+                    <span class="code-line">function createMagic() { return "Fun & Creativity"; }</span>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <div class="interactive-shape hexagon" onclick="revealJoke()">
-                <p>I'm a passionate developer and gamer who turns ideas into interactive magic. When not coding, I'm leveling up in games or designing cool stuff. Fun fact: I once built a site that made virtual confetti rain!</p>
+        <!-- About Page -->
+        <section id="about" class="page">
+            <div class="container">
+                <h2>About Me</h2>
+                <div class="about-content">
+                    <div class="profile-placeholder">
+                        <!-- Placeholder for profile picture -->
+                        <img src="https://via.placeholder.com/200x200?text=Profile+Pic" alt="Profile Picture" class="profile-img">
+                    </div>
+                    <p>“Hi! I’m Zamarul Asyraf Bin Zaidi, a passionate programmer and creative mind. I love coding, editing, and exploring new technologies. I strive to combine fun and professionalism in everything I do.”</p>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="skills">
-        <div class="container">
-            <h2>My Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-bar" data-percentage="90">
-                    <div class="skill-label">HTML</div>
-                    <div class="progress-bar">
-                        <div class="progress-fill"></div>
+        <!-- Skills Page -->
+        <section id="skills" class="page">
+            <div class="container">
+                <h2>My Skills</h2>
+                <div class="skills-graph">
+                    <div class="skill" data-skill="Talking">
+                        <span class="skill-name">Talking</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 90%;"></div>
+                        </div>
                     </div>
-                </div>
-                <div class="skill-bar" data-percentage="85">
-                    <div class="skill-label">CSS</div>
-                    <div class="progress-bar">
-                        <div class="progress-fill"></div>
+                    <div class="skill" data-skill="Editing">
+                        <span class="skill-name">Editing</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 85%;"></div>
+                        </div>
                     </div>
-                </div>
-                <div class="skill-bar" data-percentage="80">
-                    <div class="skill-label">JavaScript</div>
-                    <div class="progress-bar">
-                        <div class="progress-fill"></div>
+                    <div class="skill" data-skill="Coding">
+                        <span class="skill-name">Coding</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 80%;"></div>
+                        </div>
                     </div>
-                </div>
-                <div class="skill-bar" data-percentage="75">
-                    <div class="skill-label">React</div>
-                    <div class="progress-bar">
-                        <div class="progress-fill"></div>
-                    </div>
-                </div>
-                <div class="skill-bar" data-percentage="95">
-                    <div class="skill-label">Gaming</div>
-                    <div class="progress-bar">
-                        <div class="progress-fill"></div>
-                    </div>
-                </div>
-                <div class="skill-bar" data-percentage="70">
-                    <div class="skill-label">Photoshop</div>
-                    <div class="progress-bar">
-                        <div class="progress-fill"></div>
+                    <div class="skill" data-skill="Playing Games">
+                        <span class="skill-name">Playing Games</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 95%;"></div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="experience">
-        <div class="container">
-            <h2>Experience</h2>
-            <div class="interactive-shape circle">
-                <h3>Frontend Developer</h3>
-                <p>Built interactive websites with animations that wow users. Debugged while gaming for extra fun!</p>
+        <!-- Experience Page -->
+        <section id="experience" class="page">
+            <div class="container">
+                <h2>Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>Programming Class</h3>
+                        <p>Successfully passed Programming class in Semester 3 with A.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Game Achievement</h3>
+                        <p>Achieved top leaderboard in my game.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Editing Skills</h3>
+                        <p>Earns money based on editing skills.</p>
+                    </div>
+                </div>
             </div>
-            <div class="interactive-shape triangle">
-                <h3>Gamer Extraordinaire</h3>
-                <p>Led teams to victory in online games, strategizing like a pro. High scores are my jam!</p>
-            </div>
-            <div class="interactive-shape hexagon">
-                <h3>Graphic Designer</h3>
-                <p>Created stunning visuals in Photoshop. Turned simple ideas into epic art.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="education">
-        <div class="container">
-            <h2>Education</h2>
-            <div class="interactive-shape square">
-                <h3>Bachelor's in Computer Science</h3>
-                <p>University of Fun Coding, 2020-2024. Learned coding while playing games—best combo ever!</p>
+        <!-- Education Page -->
+        <section id="education" class="page">
+            <div class="container">
+                <h2>Education</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>Darjah 1-6</h3>
+                        <p>Sekolah Kebangsaan Bukit Teh (UPSR 4A 2B)</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Tingkatan 1-5</h3>
+                        <p>High School Bukit Mertajam (SPM 6A)</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Diploma</h3>
+                        <p>Information Management, UiTM Merbok</p>
+                    </div>
+                </div>
             </div>
-            <div class="interactive-shape circle">
-                <h3>High School Diploma</h3>
-                <p>School of Creativity, 2016-2020. Discovered design and my love for gaming.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="gallery">
-        <div class="container">
-            <h2>Gallery</h2>
-            <div class="gallery-grid">
-                <img src="placeholder.png" alt="Image 1" class="gallery-img">
-                <img src="placeholder.png" alt="Image 2" class="gallery-img">
-                <img src="placeholder.png" alt="Image 3" class="gallery-img">
-                <img src="placeholder.png" alt="Image 4" class="gallery-img">
-                <img src="placeholder.png" alt="Image 5" class="gallery-img">
-                <img src="placeholder.png" alt="Image 6" class="gallery-img">
-                <img src="placeholder.png" alt="Image 7" class="gallery-img">
-                <img src="placeholder.png" alt="Image 8" class="gallery-img">
-                <img src="placeholder.png" alt="Image 9" class="gallery-img">
+        <!-- Gallery Page -->
+        <section id="gallery" class="page">
+            <div class="container">
+                <h2>Gallery</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://via.placeholder.com/300x200?text=Image+1" alt="Gallery Image 1">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://via.placeholder.com/300x200?text=Image+2" alt="Gallery Image 2">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://via.placeholder.com/300x200?text=Image+3" alt="Gallery Image 3">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://via.placeholder.com/300x200?text=Image+4" alt="Gallery Image 4">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://via.placeholder.com/300x200?text=Image+5" alt="Gallery Image 5">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://via.placeholder.com/300x200?text=Image+6" alt="Gallery Image 6">
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="game">
-        <div class="container">
-            <h2>Mini Game: Color Burst</h2>
-            <p>Click the bursting orbs to score! Game lasts 20 seconds.</p>
-            <div id="game-area">
-                <div id="score">Score: 0</div>
-                <button id="start-game">Start Game</button>
+        <!-- Contact Page -->
+        <section id="contact" class="page">
+            <div class="container">
+                <h2>Contact Me</h2>
+                <div class="contact-icons">
+                    <a href="mailto:zamarulasyrafbinzaidi@gmail.com" class="contact-icon" title="Email">
+                        <img src="https://via.placeholder.com/50x50?text=Email" alt="Email Icon">
+                    </a>
+                    <a href="https://instagram.com/mdzmaa" target="_blank" class="contact-icon" title="Instagram">
+                        <img src="https://via.placeholder.com/50x50?text=IG" alt="Instagram Icon">
+                    </a>
+                    <a href="https://supercell.com/en/games/clashroyale/" target="_blank" class="contact-icon" title="Supercell (Clash Royale)">
+                        <img src="https://via.placeholder.com/50x50?text=CR" alt="Clash Royale Icon">
+                    </a>
+                </div>
+                <p>Clash Royale ID: @WonderfulScarceAsy</p>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <section id="contact">
-        <div class="container">
-            <h2>Contact Me</h2>
-            <div class="contact-links">
-                <a href="mailto:zamarulasyrafbinzaidi@gmail.com" class="contact-icon">
-                    <i class="fas fa-envelope"></i>
-                    <span>Email</span>
-                </a>
-                <a href="https://instagram.com/mdzmaa" target="_blank" class="contact-icon">
-                    <i class="fab fa-instagram"></i>
-                    <span>@mdzmaaa</span>
-                </a>
-                <a href="https://supercell.com" target="_blank" class="contact-icon">
-                    <i class="fas fa-gamepad"></i>
-                    <span>@WonderfulScarceAsy</span>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>Built with ❤️ by Asyifa Mirza</p>
-    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
