@@ -10,7 +10,32 @@
 </head>
 
 <body>
-<div id="contour-bg"></div>
+<div class="contour-bg">
+<svg viewBox="0 0 1440 1024" preserveAspectRatio="none">
+    <!-- Base red -->
+    <path class="layer l1" d="M0,400 Q400,200 800,400 T1440,400 L1440,1024 L0,1024 Z"></path>
+
+    <!-- Pink -->
+    <path class="layer l2" d="M0,450 Q400,250 800,450 T1440,450 L1440,1024 L0,1024 Z"></path>
+
+    <!-- White -->
+    <path class="layer l3" d="M0,500 Q400,300 800,500 T1440,500 L1440,1024 L0,1024 Z"></path>
+
+    <!-- Pink again -->
+    <path class="layer l4" d="M0,550 Q400,350 800,550 T1440,550 L1440,1024 L0,1024 Z"></path>
+
+    <!-- Red inner -->
+    <path class="layer l5" d="M0,610 Q400,420 800,610 T1440,610 L1440,1024 L0,1024 Z"></path>
+
+    <!-- *** REAL CONTOUR LINES *** -->
+    <path class="contour c1" d="M0,400 Q400,200 800,400 T1440,400"></path>
+    <path class="contour c2" d="M0,450 Q400,250 800,450 T1440,450"></path>
+    <path class="contour c3" d="M0,500 Q400,300 800,500 T1440,500"></path>
+    <path class="contour c4" d="M0,550 Q400,350 800,550 T1440,550"></path>
+    <path class="contour c5" d="M0,610 Q400,420 800,610 T1440,610"></path>
+</svg>
+</div>
+
   
   <main class="container">
     <!-- Left side with profile image and background -->
